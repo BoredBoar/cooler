@@ -13,7 +13,10 @@ function AppViewModel() {
         return 'Please return cooler by ' + self.now().add(increment, 'hour').format('MMM DD, YYYY, HH:mm (A)')
     })
 
-
+    self.printMe = function() {
+        console.log("Printing....");
+        window.print()
+    }
 }
 
 // Activates knockout.js

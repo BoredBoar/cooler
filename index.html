@@ -10,6 +10,15 @@
     <title>OUH Cooler Form</title>
 </head>
 <body>
+  <style>
+    @media print
+    {    
+        .no-print, .no-print *
+        {
+            display: none !important;
+        }
+    }
+  </style>
     <!-- <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
@@ -100,9 +109,9 @@
           <div class="row align-items-start">
             <div class="btn-group  gy-5" role="group">
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="4hr"  data-bind="checked: length">
-                <label class="btn btn-outline-primary" for="btnradio1">MTP (4 Hours)</label>
+                <label class="btn btn-outline-primary" for="btnradio1" data-bind="css: {'no-print': length() == '12hr'}" >MTP (4 Hours)</label>
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio2"  value="12hr" data-bind="checked: length">
-                <label class="btn btn-outline-primary" for="btnradio2">Routine (12 hours)</label>
+                <label class="btn btn-outline-primary" for="btnradio2" data-bind="css: {'no-print': length() == '4hr'}">Routine (12 hours)</label>
             </div>
           </div>
     </div>
@@ -139,6 +148,10 @@
         </tbody>
       </table>
 
+    </div>
+
+    <div class="container no-print">
+      <button type="button" class="btn btn-primary btn-lg" data-bind="click: printMe">Print</button>
     </div>
 
     <script src="app.js"></script>
