@@ -17,6 +17,22 @@ function AppViewModel() {
         console.log("Printing....");
         window.print()
     }
+
+    self.incHour = function() {
+        self.now(self.now().add(1,'hour'))
+    }
+
+    self.decHour = function() {
+        self.now(self.now().add(-1,'hour'))
+    }
+
+    self.incMin = function() {
+        self.now(self.now().add(1,'minute'))
+    }
+
+    self.decMin = function() {
+        self.now(self.now().add(-1,'minute'))
+    }
 }
 
 // Activates knockout.js

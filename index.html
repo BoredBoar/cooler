@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/lumen/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <title>OUH Cooler Form</title>
 </head>
@@ -100,8 +101,20 @@
           </div>
 
           <div class="row align-items-start">
+            <div class="col-4">
+              <label class="form-label mt-4">Issue Date/Time:</label>
+            </div>
+            <div class="col-8">
+              <label class="form-label mt-4">Hours
+                <span class="badge rounded-pill bg-primary" data-bind="click: incHour" style="cursor: pointer;">+</span>
+                <span class="badge rounded-pill bg-primary" data-bind="click: decHour" style="cursor: pointer;">-</span>
+              </label>
+              <label class="form-label mt-4">Min
+                <span class="badge rounded-pill bg-primary" data-bind="click: incMin" style="cursor: pointer;">+</span>
+                <span class="badge rounded-pill bg-primary" data-bind="click: decMin" style="cursor: pointer;">-</span>
+              </label>
+            </div>
             <div class="col">
-              <label class="form-label mt-4">Issue Date/Time</label>
               <input class="form-control" placeholder="Enter Date/Time Cooler was issued" data-bind="textInput: issueDT" readonly="">
             </div>
           </div>
